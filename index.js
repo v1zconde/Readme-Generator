@@ -49,12 +49,11 @@ const questions = [{
     type: "input",
     name: "contributing",
     message: "What does the user need to know about contributing to the repo?",
-},];
+}];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    console.log(fileName);
-    console.log(data);
+    console.log(fileName, data)
     fs.writeFile(fileName, data, (err) =>
     err ? console.error(err) : console.log('Commit logged!')
     );
@@ -64,6 +63,8 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then((questionResponses) => {
         console.log(questionResponses);
+
+        
         writeToFile("README.md", generateMarkdown({...questionResponses}));
         
     });
