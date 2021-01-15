@@ -1,44 +1,55 @@
-# readme generator
+# Professional README Generator
 
- [![Github License: MIT](https://img.shields.io/badge/License-MIT-yellow)](https://opensource.org/licenses/MIT)
+## Task
 
-   ## Description
-    This project allows users to generate readme files for their application. It uses Node.js
-  ---- 
-  ## Table of Contents
+create a command-line application that dynamically generates a professional README.md file from a user's input using the [Inquirer package](https://www.npmjs.com/package/inquirer).
 
-  1. [Installation](#installation)
-  2. [Tests](#tests)
-  3. [Usage](#usage)
-  4. [Contributing](#contributing)
-  5. [License](#license-of-the-project)
-  6. [Questions](#questions)
-  
-  ## Installation
+The application will be invoked by using the following command:
 
-  To install necesary dependencies, run the following command:
+```bash
+node index.js
+```
 
-      npm i
+## User Story
 
-  ## Tests
+```
+When creating an open source project on GitHub, it’s important to have a high-quality README for the app. This should include what the app is for, how to use the app, how to install it, how to report issues, and how to make contributions&mdash;this last part increases the likelihood that other developers will contribute to the success of the project. 
 
-  To run tests, run the following command:
+You can quickly and easily create a README file by using a command-line application to generate one. This allows the project creator to devote more time to working on the project.
+```
+### Built With
+----
+```
+  * Node.js
+  * Javascript
+```    
 
-      npm test
+### How to Use
+----
+```
+  1- Type "node Index.js" in the console.
+  2- Respond the questions that are going to appear in the console.
+  3- Watch the magic happends. Sections in the readme file created with your answers.
+  4- Open the file and see your new readme.md
+```    
+### Submission
+---
 
-  ## Usage
+Github Repo URL: 
+[https://github.com/v1zconde/Readme_Generator](https://github.com/v1zconde/Readme_Generator)
 
-      Use use git clone to pull down the repo to pull down this repo
+How to use Video: 
+[Watch Video](https://drive.google.com/file/d/1n0VDey-ckMGB1k0gQ-8ltZy7i1JWiRmp/view)
 
-  ## License of the project
 
-    * MIT
-    
 
-  ## Contributing
+## Example
+---
+### Readme Generator
+![Readme Example](./assets/img/full_page.png)
 
-    users cannot contribute to this repo
 
   ## Questions
 you have any questions about the repo, open an issue or contact me directly at rvasquez1@gmail.com. You can find more of my work at 
   Github: [v1zconde](http://github.com/v1zconde)
+
