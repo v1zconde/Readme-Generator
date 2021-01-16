@@ -1,61 +1,52 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {
+const renderLicenseBadge = (license) => {
   if (license === "MIT")
-    license =
-      "[![Github License: MIT](https://img.shields.io/badge/License-MIT-yellow)]";
+    return "[![Github License: MIT](https://img.shields.io/badge/License-MIT-yellow)]";
   if (license === "APACHE 2.0")
-    license =
-      "[![Github License](https://img.shields.io/badge/License-Apache%202.0-blue)]";
+    return "[![Github License](https://img.shields.io/badge/License-Apache%202.0-blue)]";
   if (license === "GPL 3.0")
-    license =
-      "[![Github License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue)]";
+    return "[![Github License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue)]";
   if (license === "BSD 3")
-    license =
-      "[![Github License](https://img.shields.io/badge/License-BSD%203-blue)]";
-  if (license === "NONE") license = "";
-  return license;
-}
+    return "[![Github License](https://img.shields.io/badge/License-BSD%203-blue)]";
+  if (license === "NONE") return "";
+};
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {
-  if (license === "MIT") license = "(https://opensource.org/licenses/MIT)";
+const renderLicenseLink = (license) => {
+  if (license === "MIT") return "(https://opensource.org/licenses/MIT)";
   if (license === "APACHE 2.0")
-    license = "(https://opensource.org/licenses/Apache-2.0)";
+    return "(https://opensource.org/licenses/Apache-2.0)";
   if (license === "GPL 3.0")
-    license = "(https://www.gnu.org/licenses/agpl-3.0)";
+    return "(https://www.gnu.org/licenses/agpl-3.0)";
   if (license === "BSD 3")
-    license = "(https://opensource.org/licenses/BSD-3-Clause)";
-  if (license === "NONE") license = "";
-  return license;
-}
+    return "(https://opensource.org/licenses/BSD-3-Clause)";
+  if (license === "NONE") return "";
+  
+};
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {
-  const badge = renderLicenseBadge(license);
-  const link = renderLicenseLink(license);
-
-  const badgeSection = {
-    badge: badge + link,
-    section: `## License of the project
+const renderLicenseSection = (license) => {
+  if (license === "NONE") {
+    return "";
+  } else {
+    return `## License of the project
 
     * ${license}
-    `,
-  };
-
-  return badgeSection;
-}
+`;
+  }
+};
 
 // TODO: Create a function to generate markdown for README
 const generateMarkdown = (data) => {
   const sectionBadge = renderLicenseSection(data.license);
-
-  const { badge, section } = sectionBadge;
+  const badge = renderLicenseBadge(data.license);
+  const link = renderLicenseLink(data.license);
 
   return `# ${data.title}\n
- ${badge}
+ ${badge}${link}
 
    ## Description
     ${data.description}
@@ -85,7 +76,7 @@ const generateMarkdown = (data) => {
 
       Use ${data.usage} to pull down this repo
 
-  ${section}
+  ${sectionBadge}
 
   ## Contributing
 

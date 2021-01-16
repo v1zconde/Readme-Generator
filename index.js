@@ -53,14 +53,14 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
+const writeToFile = (fileName, data) => {
   fs.writeFile(fileName, data, (err) =>
     err ? console.error(err) : console.log("Commit logged!")
   );
 }
 
 // TODO: Create a function to initialize app
-function init() {
+const init = () => {
   inquirer.prompt(questions).then((questionResponses) => {
     writeToFile("README2.md", generateMarkdown({ ...questionResponses }));
   });
