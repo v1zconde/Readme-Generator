@@ -1,5 +1,7 @@
+let totLicense = "";
+let sectionBadge = "";
+let totBadges ="";
 // TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
 const renderLicenseBadge = (license) => {
   if (license === "MIT")
     return "[![Github License: MIT](https://img.shields.io/badge/License-MIT-yellow)]";
@@ -13,7 +15,6 @@ const renderLicenseBadge = (license) => {
 };
 
 // TODO: Create a function that returns the license link
-// If there is no license, return an empty string
 const renderLicenseLink = (license) => {
   if (license === "MIT") return "(https://opensource.org/licenses/MIT)";
   if (license === "APACHE 2.0")
@@ -22,31 +23,34 @@ const renderLicenseLink = (license) => {
     return "(https://www.gnu.org/licenses/agpl-3.0)";
   if (license === "BSD 3")
     return "(https://opensource.org/licenses/BSD-3-Clause)";
-  if (license === "NONE") return "";
-  
 };
 
 // TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
 const renderLicenseSection = (license) => {
-  if (license === "NONE") {
-    return "";
-  } else {
-    return `## License of the project
-
-    * ${license}
-`;
-  }
+  totBadges += `* ${license}\n`
+  return `## License of the project
+${totBadges}`;
 };
 
 // TODO: Create a function to generate markdown for README
 const generateMarkdown = (data) => {
-  const sectionBadge = renderLicenseSection(data.license);
-  const badge = renderLicenseBadge(data.license);
-  const link = renderLicenseLink(data.license);
+//If the license is not NONE, then create for the badge and link and section
 
+  for (const licenses of data.license){
+    if (licenses === "NONE" || licenses === null){
+      totLicense = "";
+      sectionBadge = "";
+    }
+    else 
+    {
+  const badge = renderLicenseBadge(licenses);
+  const link = renderLicenseLink(licenses);
+  sectionBadge = renderLicenseSection(licenses);
+  totLicense += badge + link + " ";
+}
+}
   return `# ${data.title}\n
- ${badge}${link}
+ ${totLicense}
 
    ## Description
     ${data.description}
@@ -76,9 +80,9 @@ const generateMarkdown = (data) => {
 
       Use ${data.usage} to pull down this repo
 
-  ${sectionBadge}
+${sectionBadge}
 
-  ## Contributing
+## Contributing
 
     ${data.contributing}
 

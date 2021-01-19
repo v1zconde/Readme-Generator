@@ -29,8 +29,9 @@ You can quickly and easily create a README file by using a command-line applicat
 ```
   1- Type "node Index.js" in the console.
   2- Respond the questions that are going to appear in the console.
-  3- Watch the magic happends. Sections in the readme file created with your answers.
-  4- Open the file and see your new readme.md
+  3- You can choose more than 1 license, but if you choose NONE, then        license will be empty
+  4- Watch the magic happends. Sections in the readme file created with your answers.
+  5- Open the file and see your new readme.md
 ```    
 ### Submission
 ---
