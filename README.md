@@ -31,7 +31,8 @@ You can quickly and easily create a README file by using a command-line applicat
   2- Respond the questions that are going to appear in the console.
   3- You can choose more than 1 license, but if you choose NONE, then        license will be empty
   4- Watch the magic happends. Sections in the readme file created with your answers.
-  5- Open the file and see your new readme.md
+  5- If you click in the table of content its going to take you to the right section.
+  6- Open the file and see your new readme.md
 ```    
 ### Submission
 ---
